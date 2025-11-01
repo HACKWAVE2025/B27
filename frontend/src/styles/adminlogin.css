@@ -1,0 +1,211 @@
+/* Admin Login Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'OpenDyslexic', sans-serif;
+}
+
+.admin-login-container {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.admin-login-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ---------------------- */
+/* 💳 UIVERSE CARD STYLING */
+/* ---------------------- */
+
+.card {
+  width: 320px;
+  padding: 30px;
+  background: #fdfaf5;
+  border: 8px solid #00b3ff;
+  box-shadow: 15px 15px 0 #000;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 8px solid;
+border-image: linear-gradient(to right,#1352c1,#00b3ff) 1;
+
+}
+
+.card:active {
+  animation: shake 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 20px 20px 0 #000000;
+}
+
+.banner {
+  position: absolute;
+  top: 3px;
+  right: -95px;
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  width: 350px;
+  text-align: center;
+  transform: rotate(45deg);
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+.banner-text {
+  display: inline-block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  width: 100%;
+  position: absolute;
+  left: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner:hover .banner-text:first-child {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.banner:hover .banner-text:last-child {
+  opacity: 1;
+  transform: translateY(-40%);
+}
+
+.banner-text:last-child {
+  opacity: 0;
+  transform: translateY(60%);
+}
+
+.banner:hover {
+  background: #00b3ff;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+  border-bottom: 2px solid #000;
+  width: 60%;
+}
+
+.card__subtitle {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__form input {
+  padding: 12px;
+  border: 4px solid #000;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.card__form input:focus {
+  outline: none;
+  transform: scale(1.05);
+}
+
+.sign-up {
+  border: 4px solid #000;
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sign-up:hover {
+  background: #fff;
+  color: #00b3ff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 0 #000;
+}
+
+.sign-up:active {
+  animation: shake 0.5s ease-in-out;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.error-message {
+  color: #e53e3e;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  min-height: 24px;
+  font-weight: 500;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Shake animation reused for both */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* ---------------------- */
+/* 📱 RESPONSIVE FIXES */
+/* ---------------------- */
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .card__title {
+    font-size: 20px;
+    width: 70%;
+  }
+
+  .card__form input {
+    font-size: 14px;
+  }
+
+  .sign-up {
+    font-size: 16px;
+  }
+}
