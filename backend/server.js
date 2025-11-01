@@ -48,6 +48,7 @@ app.use('/superadmin', superadminRoutes);
 app.use('/admin', adminRoutes);
 app.use('/child', childRoutes);
 
+
 // Socket.IO connection handler for real-time updates
 io.on('connection', (socket) => {
   console.log('Socket.IO client connected:', socket.id);
